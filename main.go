@@ -30,7 +30,7 @@ func connectMongo() {
 		log.Fatal("Could not connect to MongoDB:", err)
 	}
 
-	fmt.Println("✅ Connected to MongoDB Replica Set!")
+	fmt.Println("Connected to MongoDB Replica Set!")
 }
 
 type Data struct {
@@ -88,6 +88,6 @@ func main() {
 	connectMongo()
 	http.HandleFunc("/get", getData)
 	http.HandleFunc("/post", postData)
-	log.Println("🚀 Server running on port 8080")
+	log.Println("Server running on port 8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
